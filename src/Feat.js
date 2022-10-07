@@ -1,48 +1,48 @@
 import Post from './Post';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import {Variables} from './Variables.js';
-import React, {Component} from 'react';
+import { variables } from './Variables.js';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class Feat extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       items: [],
     }
   }
-  
-  componentDidMount(){
-    fetch("https://localhost:44314/api/Post")
-    .then(res=>res.json())
-    .then(json=> {
-      this.setState({
-        items: json
-    })
-    });
+
+  componentDidMount() {
+    axios.get(variables.API_URL + "Post")
+      .then(res => {
+        const items = res.data
+        this.setState({
+          items
+        });
+      });
   }
 
 
-render(){
+  render() {
     var items = this.state.items;
 
-    return ( <div className="Feat">
+    return (
+      <div className="">
         <h2>Welcome back!</h2>
-        <ul>
-        {items.map(ite=>(
-            <li key={ite.UserName}>
-      <Row>
-        <Col></Col>
-        <Col xs={5}><Post user = {ite.UserName} message = {ite.Caption}/></Col>
-        <Col></Col>
-      </Row>
-        </li>
-          ))}
-        </ul>
-    </div> );
-}
+        <main class="py-4">
+          <div class="px-4">
+            <div class="block justify-between md:-mx-2">
+              {/**md:flex */}
+              {items.map(ite => (
+                <Post user={ite.UserName} message={ite.Caption} />
+              ))}
+            </div>
+          </div>
+        </main>
+      </div>
+
+    );
+  }
 };
- 
+
 export default Feat;

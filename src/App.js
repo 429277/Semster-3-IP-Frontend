@@ -1,19 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
-import NavScrollExample from './Navbar';
 import Feat from './Feat';
+import Sidebar from './Sidebar';
+import './index.css';
+import Searchbar from './Searchbar';
+import Userlist from './Userlist';
 
 
 function App() {
-  
+
   return (
     <div className="App">
-      <NavScrollExample/>
-        <div className="content">
-          <Feat/>
-          <p>{Math.random() * 10}</p>
+      <div className="flex">
+        <Sidebar />
+        <div>
+          <Searchbar />
+          <Feat />
         </div>
+        <Userlist />
+      </div>
 
     </div>
   );
