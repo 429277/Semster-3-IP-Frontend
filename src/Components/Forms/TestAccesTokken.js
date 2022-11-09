@@ -39,7 +39,7 @@ const TestAccesTokken = () => {
     };
 
     return (
-        <div className="bg-gray-50 text-gray-800">
+        <div className="bg-gray-500 text-gray-800">
             <h1>External API</h1>
             <p>
                 Use these buttons to call an external API. The protected API call has an
@@ -50,10 +50,10 @@ const TestAccesTokken = () => {
                 className="btn-group mt-5"
                 role="group"
                 aria-label="External API Requests Examples">
-                <button type="button" className="ml-2 text-sm tracking-wide bg-gray-600 truncate dark:text-white" onClick={callApi}>
+                <button className="ml-2 text-sm tracking-wide truncate dark:text-white" onClick={callApi}>
                     Get Public Message
                 </button>
-                <button type="button" className="btn btn-primary" onClick={callSecureApi}>
+                <button className="btn btn-primary" onClick={callSecureApi}>
                     Get Protected Message
                 </button>
             </div>

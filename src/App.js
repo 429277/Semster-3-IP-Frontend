@@ -7,7 +7,7 @@ import Home from './Home';
 import UploadImage from './Components/Forms/UploadImage';
 import Profile from './Components/Forms/Profile';
 import TestAccesTokken from './Components/Forms/TestAccesTokken';
-import ReactDom from "react-dom";
+import TestMe from './TestMe';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/Userlist" element={<Userlist />} />
           <Route path="/Upload" element={<UploadImage />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/TestAccesTokken" element={<TestAccesTokken />} />
+          <Route path="/TestAccesTokken" element={<TestMe />} />
         </Routes>
       </div>
     </div>
