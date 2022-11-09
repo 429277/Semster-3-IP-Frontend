@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './Home';
-import Feat from './Feat';
-import Sidebar from './Sidebar';
+import Sidebar from './Components/Forms/Sidebar';
 import './index.css';
-import Searchbar from './Searchbar';
-import Userlist from './Userlist';
-
+import Userlist from './Components/Forms/Userlist';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import UploadImage from './Components/Forms/UploadImage';
+import Profile from './Components/Forms/Profile';
+import TestAccesTokken from './Components/Forms/TestAccesTokken';
+import ReactDom from "react-dom";
 
 function App() {
 
@@ -14,13 +15,14 @@ function App() {
     <div className="App">
       <div className="flex">
         <Sidebar />
-        <div>
-          <Searchbar />
-          <Feat />
-        </div>
-        <Userlist />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Userlist" element={<Userlist />} />
+          <Route path="/Upload" element={<UploadImage />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/TestAccesTokken" element={<TestAccesTokken />} />
+        </Routes>
       </div>
-
     </div>
   );
 }

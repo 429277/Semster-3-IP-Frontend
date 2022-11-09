@@ -1,11 +1,14 @@
-import Post from './Post';
-import Friend from './Friend';
+import Searchbar from './Components/UI/Searchbar';
+import Feed from './Components/Forms/Feed';
 
 const Home = () => {
 
-    return ( <div className="home">
-        <h2>Welcome back!</h2>
-    </div> );
+    return (<div className="flex">
+        <div>
+            <Searchbar />
+            <Feed />
+        </div>
+    </div>);
 }
- 
+
 export default Home;
