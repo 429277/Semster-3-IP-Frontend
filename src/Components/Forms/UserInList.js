@@ -1,18 +1,33 @@
 import { variables } from '../../Variables.js';
 import axios from 'axios';
 import { useState } from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 
 const UserInList = ({ username, userId, }) => {
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
     const [followState, setFollowState] = useState('follow');
+    const { getAccessTokenSilently } = useAuth0();
 
-    const FollowUser = (Id) => {
-        console.log(Id);
-        const FollowLogic = { followerId: 10001, followingId: Id };
-        axios.post(variables.API_URL + "User", FollowLogic);
+    const FollowUser = async (followUserId) => {
+        try {
+            const token = await getAccessTokenSilently();
+            const response = await fetch(`${serverUrl}/api/User/Follow`,
+                {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `${token}`,
+                    },
+                    body: followUserId,
+                },
+            );
+            const responseData = await response.json();
+        } catch (error) {
+            console.log(error)
+        }
 
-        setFollowState('✓')
+        setFollowState('✓');
     }
 
     return (

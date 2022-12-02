@@ -34,7 +34,7 @@ class Feed extends Component {
             <div className="block justify-between md:-mx-2">
               {/**md:flex */}
               {items.map(ite => (
-                <Post user={ite.UserName} message={ite.Caption} />
+                <Post username={ite.Username} message={ite.Caption} image={ite.Image} />
               ))}
             </div>
           </div>
