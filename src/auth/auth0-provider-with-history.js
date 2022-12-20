@@ -12,7 +12,6 @@ const Auth0ProviderWithHistory = ({ children }) => {
         history.push(appState?.returnTo || window.location.pathname);
     };
 
-
     console.log(domain);
     console.log(clientId);
 
