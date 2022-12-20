@@ -3,12 +3,13 @@ import Feed from './Components/Forms/Feed';
 
 const Home = () => {
 
-    return (<div className="flex">
-        <div>
-            <Searchbar />
-            <Feed />
-        </div>
-    </div>);
+    return (
+        <div className="flex w-full">
+            <div className="w-full">
+                <Searchbar />
+                <Feed ApiRoute="Post/GetFeed" />
+            </div>
+        </div>);
 }
 
 export default Home;
