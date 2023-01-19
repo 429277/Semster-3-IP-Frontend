@@ -5,7 +5,7 @@ import SvgAddIcon from "../../Assets/SVG/circle-plus-svgrepo-com.svg"
 
 const Sidebar = () => {
   return (
-    <div className="min-h-screen flex flex-col flex-shrink-0 antialiased bg-gray-50 text-gray-800">
+    <div className="max-h-screen flex flex-col flex-shrink-0 antialiased bg-gray-50 text-gray-800">
       <div className="flex flex-col top-0 left-0 w-64 bg-white h-full border-r dark:bg-gray-800">
         <div className="flex items-center justify-center h-14 border-b">
           <div className="text-2xl dark:text-white">Anstigram</div>

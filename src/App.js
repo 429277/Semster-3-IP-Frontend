@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="flex ">
-        <Sidebar />
+      <div className="flex">
+        <div className='sticky top-0 max-h-screen'><Sidebar /></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Userlist" element={<Userlist />} />

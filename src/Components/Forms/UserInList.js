@@ -12,6 +12,8 @@ const UserInList = ({ username, userId, }) => {
 
     const FollowUser = async (followUserId) => {
         try {
+            const formData = new FormData();
+            formData.append('followUserId', followUserId);
             const token = await getAccessTokenSilently();
             const response = await fetch(`${serverUrl}/api/User/Follow`,
                 {
@@ -19,7 +21,7 @@ const UserInList = ({ username, userId, }) => {
                     headers: {
                         Authorization: `${token}`,
                     },
-                    body: followUserId,
+                    body: formData,
                 },
             );
             const responseData = await response.json();
