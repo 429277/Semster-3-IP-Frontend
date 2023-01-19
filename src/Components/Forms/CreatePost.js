@@ -9,6 +9,7 @@ const CreatePost = () => {
     const [image, SetImage] = useState('');
     const [imageSrc, SetImageSrc] = useState(DI);
     const [caption, SetCaption] = useState('');
+    const [createState, setCreateState] = useState('Submit');
 
     function handleImage(e) {
         console.log(e.target.files);
@@ -44,6 +45,7 @@ const CreatePost = () => {
         } catch (error) {
             console.log(error)
         }
+        setCreateState('✓');
     };
 
     const { isAuthenticated } = useAuth0();
@@ -69,7 +71,7 @@ const CreatePost = () => {
                 <div className="bg-gray-700 rounded-lg">
                     <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline m-1" type="text" placeholder="type caption" onChange={handleCaption}></input>
                 </div>
-                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-1' onClick={handleApi}>Submit</button>
+                <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-1' onClick={handleApi}>{createState}</button>
             </div>);
     } else {
         return (
