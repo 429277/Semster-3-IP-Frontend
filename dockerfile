@@ -1,5 +1,5 @@
-FROM node:19.9.0.alpine
-WORKDIR '/app'
+FROM node:18.2.0
+WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
